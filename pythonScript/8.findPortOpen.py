@@ -44,11 +44,11 @@ try:
 
 	
 	print 'Script Executed Successfully'
-	connSNS.publish(topic='arn:aws:sns:us-east-1:XXXXXXXXXXXX:boto-script-execution',message = sys.exc_info(), subject='Script Executed Successfully')
+	#connSNS.publish(topic='arn:aws:sns:us-east-1:XXXXXXXXXXXX:boto-script-execution',message = sys.exc_info(), subject='Script Executed Successfully')
 	
 except :
     print 'Some Error occurred : '
     print sys.exc_info()
-    connSNS.publish(topic='arn:aws:sns:us-east-1:XXXXXXXXXXXX:boto-script-execution',message = sys.exc_info(), subject='script ended with error')
+   # connSNS.publish(topic='arn:aws:sns:us-east-1:XXXXXXXXXXXX:boto-script-execution',message = sys.exc_info(), subject='script ended with error')
 #     
 #     
