@@ -1,4 +1,4 @@
-# This script will result all the AWS IAM Users whose access keys are 90 days old
+# This script will list all the AWS IAM Users whose access keys are 90 days old
 
 import datetime
 import dateutil
