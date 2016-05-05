@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: open-Recipe
+# Cookbook Name:: openresty Recipe
 # resty:: default
 #
-# Copyright 2016, YOUR_COMPANY_NAME
+# Copyright 2016, Vikash
 #
 # All rights reserved - Do Not Redistribute
 #
