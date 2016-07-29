@@ -1,0 +1,15 @@
+- hosts: all
+  gather_facts: False
+  
+  tasks:
+  - name: install python 2
+    raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+    sudo: yes
+
+- hosts: wordpress
+ 
+  roles:
+  - package
+  - php5-fpm
+  - mysql
+  - wordpress

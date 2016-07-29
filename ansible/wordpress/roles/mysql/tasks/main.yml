@@ -1,0 +1,18 @@
+---
+# tasks file for wordpress
+
+#- name: Update MySQL root password
+#  sudo: yes
+#  mysql_user: name=root host=localhost password=root check_implicit_admin=yes login_user=root state=present priv=*.*:ALL
+- name: Create User
+  mysql_user: name=ansibleVikash host=localhost password=ansibleVik123  priv=*.*:ALL state=present
+  sudo: yes
+#- name: Copy my.cnf file
+#  sudo: yes
+#  template: src=templates/root/.my.cnf dest=/root/.my.cnf owner=root
+
+- name: Create Database
+  sudo: yes
+  mysql_db: name=ansible state=present
+
+

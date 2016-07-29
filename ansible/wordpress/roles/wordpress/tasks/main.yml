@@ -1,0 +1,18 @@
+---
+- name: Download wordpress
+  get_url: url=https://wordpress.org/latest.tar.gz dest=/tmp/latest.tar.gz
+  sudo: yes
+
+- name: Extract wordpress
+  unarchive: src=/tmp/latest.tar.gz dest=/usr/share/nginx/ copy=no
+  sudo: yes
+
+- name: Copy Nginx Virtual Host File
+  sudo: yes
+  template: src=templates/default dest=/etc/nginx/sites-enabled/default owner=root
+  notify: restart nginx
+
+- name: Move wp-config-sample.php to wp-config.php
+  template: src=templates/wp-config.php dest=/usr/share/nginx/wordpress/ 
+  sudo: yes 
+  notify: restart php-fpm

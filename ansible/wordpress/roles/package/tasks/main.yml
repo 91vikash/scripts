@@ -1,0 +1,17 @@
+---
+# tasks file for server
+
+- name: apt update
+  apt: update_cache=yes cache_valid_time=3600
+  sudo: yes
+
+- name: Install LEMP Stack
+  apt: name={{ item }} state=present
+  sudo: yes
+  with_items:
+    - python
+    - nginx
+    - mysql-server
+    - php-fpm
+    - php-mysql
+    - python-mysqldb

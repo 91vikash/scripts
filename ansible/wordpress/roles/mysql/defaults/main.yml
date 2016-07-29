@@ -1,0 +1,5 @@
+---
+# defaults file for wordpress
+mysql_root_username: root
+mysql_root_password: root
+mysql_db_name: ansible
